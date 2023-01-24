@@ -22,6 +22,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="data/css/main.css">
+	<link rel="stylesheet" type="text/css" href="data/css/responsive.css">
 	<title>Document</title>
 </head>
 <body>
@@ -40,7 +41,32 @@
 		</div>
 	</header>
 	<div class="viewport">
-		<div class="main"></div>
+		<div class="main">
+			<div class="info">
+				<p>Naam</p>
+				<p>Mail</p>
+				<p>Telefoon</p>
+				<p>Informatie</p>
+				<p>Locatie</p>
+			</div>
+			<?php
+				$sql = "SELECT name, mail, phone, information, location FROM data";
+				$result = $conn->query($sql);
+				if ($result->num_rows > 0) {
+					while($row = $result->fetch_assoc()) {
+						echo "<div class='data'>";
+							echo "<div class='item_name'>".$row["name"]."</div>";
+							echo "<div class='item_mail'>".$row["mail"]."</div>";
+							echo "<div class='item_phone'>".$row["phone"]."</div>";
+							echo "<div class='item_information'>".$row["information"]."</div>";
+							echo "<div class='item_location'>".$row["location"]."</div>";
+						echo "</div>";
+					};
+				} else {
+					echo "Geen resultaat";
+				}
+			?>
+		</div>
 	</div>
 	<footer>
 		<h5>&copy; Copyright 2023-2024</h5>
