@@ -117,7 +117,6 @@ footer {
 	border-top-left-radius: 20px;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	align-content: center;
 	align-items: center;
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
@@ -132,11 +131,27 @@ footer {
 	height: 5vh;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 	align-content: center;
 	align-items: center;
 	padding: 15px;
 }
 .data:nth-child(even) {
 	background: #E2E2E2;
+}
+.item_name, .info > p:first-child {
+	width: 250px;
+}
+.item_mail, .info > p:nth-of-type(2) {
+	width: 250px;
+}
+.item_phone, .info > p:nth-of-type(3) {
+	width: 100px;
+}
+.item_information, .info > p:nth-of-type(4) {
+	margin-left: 100px;
+	width: 350px;
+}
+.item_location, .info > p:nth-of-type(5) {
+	margin-left: 10px;
+	width: 400px;
 }
