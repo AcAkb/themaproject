@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 	font-family: "Manrope", sans-serif;
+	text-decoration: none;
 }
 header {
 	height: 15vh;
@@ -18,6 +19,7 @@ footer {
 	bottom: 0;
 	left: 0;
 	font-size: 10px;
+	padding: 5px;
 }
 .container {
 	height: calc(100% - 40%);
@@ -30,6 +32,7 @@ footer {
 	justify-content: space-between;
 	align-content: center;
 	align-items: center;
+	padding: 20px;
 }
 .viewport {
 	position: relative;
@@ -55,4 +58,51 @@ footer {
 	padding: 10px 30px;
 	border-radius: 20px;
 	font-size: 16px;
+	font-weight: bold;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+}
+.button_one:hover {
+	cursor: pointer;
+	color: forestgreen;
+}
+.button_two {
+	background: #ABD7EB;
+	color: white;
+	border: 0;
+	outline: 0;
+	padding: 10px 30px;
+	border-radius: 20px;
+	font-size: 16px;
+	font-weight: bold;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+}
+.button_two:hover {
+	cursor: pointer;
+	color: steelblue;
+}
+.searchbar {
+	background: #E2E2E2;
+	width: 400px;
+	padding: 10px;
+	border: 0;
+	outline: 0;
+	border-radius: 20px;
+	font-size: 16px;
+}
+.icon_parent {
+	padding: 0;
+	outline: 0;
+	border: 0;
+}
+.icon {
+	background: #E2E2E2;
+	border: 0;
+	outline: 0;
+	font-size: 16px;
+	padding: 10px;
+	border-radius: 20px;
+}
+.icon:hover {
+	cursor: pointer;
+	color: orange;
 }
