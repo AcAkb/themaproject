@@ -29,7 +29,7 @@
 	<script src="https://kit.fontawesome.com/9ab1f6c7e9.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="data/css/main.css">
 	<link rel="stylesheet" type="text/css" href="data/css/responsive.css">
-	<title>Document</title>
+	<title>💼 Thema Project</title>
 </head>
 <body>
 	<header>
@@ -62,7 +62,7 @@
 					if ($result->num_rows > 0) {
 						while($row = $result->fetch_assoc()) {
 							echo "<div class='data standard'>";
-								echo "<div class='item_name'>".$row["name"]."</div>";
+								echo "<input type='radio' name='checkbox' class='checkbox'><div class='item_name'>".$row["name"]."</div>";
 								echo "<div class='item_mail'>".$row["mail"]."</div>";
 								echo "<div class='item_phone'>".$row["phone"]."</div>";
 								echo "<div class='item_information'>".$row["information"]."</div>";
@@ -89,7 +89,7 @@
 									"
 									);
 									echo "<div class='data'>";
-										echo "<div class='item_name'>".$row["name"]."</div>";
+										echo "<input type='radio' name='checkbox'><div class='item_name'>".$row["name"]."</div>";
 										echo "<div class='item_mail'>".$row["mail"]."</div>";
 										echo "<div class='item_phone'>".$row["phone"]."</div>";
 										echo "<div class='item_information'>".$row["information"]."</div>";
@@ -104,7 +104,7 @@
 											alert('Geen resultaat!');
 										</script>
 									"
-									);
+								);
 							}
 						}
 						else {
