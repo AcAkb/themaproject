@@ -12,7 +12,7 @@
 		echo "FACK YOU MEOW";
 	};
 	if(array_key_exists("button_two", $_POST)) {
-		button_one();
+		button_two();
 	};
 	function button_two() {
 		echo "FACK YOU MEOW 2";
