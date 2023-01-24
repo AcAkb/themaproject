@@ -71,40 +71,45 @@
 					} else {
 						echo "Geen resultaat";
 					}
-						if(!empty($_GET["search"])) {
-
-					$query = $_GET["search"]; 
-					$min_length = 3;
-					if(strlen($query) >= $min_length) {
-						$query = htmlspecialchars($query);
-						$query = mysqli_real_escape_string($conn, $query);
-						$raw_results = mysqli_query($conn, "SELECT * FROM data WHERE (`name` LIKE '%".$query."%') OR (`name` LIKE '%".$query."%')") or die(mysqli_error());
-						if(mysqli_num_rows($raw_results) > 0) {
-							while($row = mysqli_fetch_array($raw_results)){
+					if(!empty($_GET["search"])) {
+						$query = $_GET["search"]; 
+						$min_length = 3;
+						if(strlen($query) >= $min_length) {
+							$query = htmlspecialchars($query);
+							$query = mysqli_real_escape_string($conn, $query);
+							$raw_results = mysqli_query($conn, "SELECT * FROM data WHERE (`name` LIKE '%".$query."%') OR (`name` LIKE '%".$query."%')") or die(mysqli_error());
+							if(mysqli_num_rows($raw_results) > 0) {
+								while($row = mysqli_fetch_array($raw_results)){
+									print(
+									"
+										<script>
+											$('.standard').hide();
+										</script>
+									"
+									);
+									echo "<div class='data'>";
+										echo "<div class='item_name'>".$row["name"]."</div>";
+										echo "<div class='item_mail'>".$row["mail"]."</div>";
+										echo "<div class='item_phone'>".$row["phone"]."</div>";
+										echo "<div class='item_information'>".$row["information"]."</div>";
+										echo "<div class='item_location'>".$row["location"]."</div>";
+									echo "</div>";
+								}	
+							}
+							else {
 								print(
-								"
-									<script>
-										$('.standard').hide();
-									</script>
-								"
-								);
-								echo "<div class='data'>";
-									echo "<div class='item_name'>".$row["name"]."</div>";
-									echo "<div class='item_mail'>".$row["mail"]."</div>";
-									echo "<div class='item_phone'>".$row["phone"]."</div>";
-									echo "<div class='item_information'>".$row["information"]."</div>";
-									echo "<div class='item_location'>".$row["location"]."</div>";
-								echo "</div>";
-							}	
+									"
+										<script>
+											alert('Geen resultaat!');
+										</script>
+									"
+									);
+							}
 						}
 						else {
-							echo "Geen resultaat";
-						}
-					}
-					else {
-						echo "Minimum lengte is ".$min_length;
+							echo "Minimum lengte is ".$min_length;
+						};
 					};
-				};
 				?>
 			</div>
 		</div>
