@@ -26,7 +26,7 @@
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://kit.fontawesome.com/9ab1f6c7e9.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="data/css/main.css">
 	<link rel="stylesheet" type="text/css" href="data/css/responsive.css">
 	<title>Document</title>
@@ -40,6 +40,7 @@
 			<form action="index.php" method="get">
 				<input type="text" placeholder="Zoeken.. (op naam)" name="search" class="searchbar">
 				<button type="submit" class="icon_parent"><i class="fa fa-search icon"></i></button>
+				<button type="submit" class="icon_parent" onclick="search();"><i class="fa fa-xmark icon"></i></button>
 			</form>
 			<form method="post">
 				<input type="submit" name="button_two" value="Remove Item" class="button_two">
@@ -117,6 +118,6 @@
 	<footer>
 		<h5>&copy; Copyright 2023-2024</h5>
 	</footer>
+	<script src="data/js/main.js"></script>
 </body>
-<script type="text/javascript" src="data/js/main.js"></script>
 </html>
