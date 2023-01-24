@@ -1,35 +1,11 @@
 @media only screen and (max-width: 768px) {
 	* {
-		font-size: 16px;
+		font-size: 14px !important;
 	}
-	header {
-		height: 30vh;
-	}
-	.container {
-		flex-direction: column;
-	}
-	.button_one, .button_two {
-		width: 200px;
-	}
-	.searchbar {
-		width: 300px;
-	}
-}
-@media only screen and (max-width: 560px) {
-	* {
-		font-size: 10px !important;
-	}
-}
-@media only screen and (max-width: 425px) {
 	.button_one, .button_two {
 		width: 150px;
 	}
 	.searchbar {
-		width: 200px;
-	}
-}
-@media only screen and (max-width: 355px) {
-	* {
-		font-size: 9px !important;
+		width: 250px;
 	}
 }

@@ -38,11 +38,11 @@
 				<input type="submit" name="button_one" value="Add Item" class="button_one">
 			</form>
 			<form action="index.php" method="get">
-				<input type="text" placeholder="Zoeken.." name="search" class="searchbar">
+				<input type="text" placeholder="Zoeken.. (op naam)" name="search" class="searchbar">
 				<button type="submit" class="icon_parent"><i class="fa fa-search icon"></i></button>
 			</form>
 			<form method="post">
-				<input type="submit" name="button_two" value="" class="button_two">
+				<input type="submit" name="button_two" value="Remove Item" class="button_two">
 			</form>
 		</div>
 	</header>
