@@ -6,6 +6,9 @@
 	font-family: "Manrope", sans-serif;
 	text-decoration: none;
 }
+body {
+	overflow-x: hidden;
+}
 header {
 	height: 15vh;
 	width: 100vw;
@@ -105,13 +108,16 @@ footer {
 	border-top-left-radius: 20px;
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 	align-content: center;
 	align-items: center;
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+	text-align: center;
 }
 .info > p {
 	font-size: 16px;
 	font-weight: bold;
+	text-align: center;
 }
 .data {
 	position: relative;
@@ -126,43 +132,61 @@ footer {
 .data:nth-child(even) {
 	background: #E2E2E2;
 }
-.item_name, .info > p:first-child {
-	width: 250px;
-}
-.item_mail, .info > p:nth-of-type(2) {
-	width: 250px;
-}
-.item_phone, .info > p:nth-of-type(3) {
-	width: 100px;
-}
-.item_information, .info > p:nth-of-type(4) {
-	margin-left: 100px;
-	width: 350px;
-}
-.item_location, .info > p:nth-of-type(5) {
-	margin-left: 10px;
-	width: 400px;
-}
 .checkbox {
 	margin-right: 20px;
 }
-.info > p:first-child {
-	margin-left: 30px;
-}
 .remove-button {
+	font-family: FontAwesome;
 	background: transparent;
 	border: 0;
 	outline: 0;
+	color: lightcoral;
 	margin-right: 25px;
-	font-family: FontAwesome;
-	color: lightcoral;
 	font-size: 16px;
 }
-.remove-button > i {
-	color: lightcoral;
-	font-size: 16px;
-}
-.remove-button > i:hover {
+.remove-button:hover {
 	cursor: pointer;
 	color: red;
+}
+.container-form {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+.container-form > form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+.custom-form > input {
+	width: 400px;
+	text-align: center;
+	border: 0;
+	outline: 0;
+	background: #E2E2E2;
+	height: 40px;
+	border-radius: 20px;
+	font-size: 16px;
+}
+.custom-form > input:not(:last-child) {
+	margin-bottom: 20px;
+}
+.custom-form > input[type=submit] {
+	background: #BFE3B4;
+	color: white;
+	width: 300px;
+	transition: all 0.5s ease-in;
+	font-weight: bold;
+}
+.custom-form > input[type=submit]:hover {
+	cursor: pointer;
+	background: green;
+	color: limegreen;
+	width: 200px;
+	transition: all 0.5s ease-in;
 }

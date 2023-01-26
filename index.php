@@ -9,7 +9,7 @@
 		buttonOne();
 	};
 	function buttonOne() {
-		echo "FACK YOU MEOW";
+		header("location: data/public/toevoegen.php");
 	};
 ?>
 <!DOCTYPE html>
@@ -84,6 +84,10 @@
 									"
 									);
 									echo "<div class='data'>";
+										echo "<form action='index.php' method='post'>";
+											echo "<input type='submit' name='remove' value='&#xf057' class='remove-button'>";
+											echo "<input type='hidden' name='remove-id' value='". $row['id'] ."'>";		
+										echo "</form>";
 										echo "<div class='item_name'>".$row["name"]."</div>";
 										echo "<div class='item_mail'>".$row["mail"]."</div>";
 										echo "<div class='item_phone'>".$row["phone"]."</div>";
