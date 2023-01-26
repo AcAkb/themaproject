@@ -5,17 +5,11 @@
 
 	include "data/private/database.php";
 
-	if(array_key_exists("button_one", $_POST)) {
-		button_one();
+	if(array_key_exists("button-one", $_POST)) {
+		buttonOne();
 	};
-	function button_one() {
+	function buttonOne() {
 		echo "FACK YOU MEOW";
-	};
-	if(array_key_exists("button_two", $_POST)) {
-		button_two();
-	};
-	function button_two() {
-		echo "FACK YOU MEOW 2";
 	};
 ?>
 <!DOCTYPE html>
@@ -35,15 +29,12 @@
 	<header>
 		<div class="container">
 			<form method="post">
-				<input type="submit" name="button_one" value="Add Item" class="button_one">
+				<input type="submit" name="button-one" value="Add Item" class="button-one">
 			</form>
 			<form action="index.php" method="get">
 				<input type="text" placeholder="Zoeken.. (op naam)" name="search" class="searchbar">
-				<button type="submit" class="icon_parent"><i class="fa fa-search icon"></i></button>
-				<button type="submit" class="icon_parent"><i class="fa fa-xmark icon"></i></button>
-			</form>
-			<form method="post">
-				<input type="submit" name="button_two" value="" class="button_two" id="button_two">
+				<button type="submit" class="icon-parent"><i class="fa fa-search icon"></i></button>
+				<button type="submit" class="icon-parent"><i class="fa fa-xmark icon"></i></button>
 			</form>
 		</div>
 	</header>
@@ -57,12 +48,16 @@
 				<p>Locatie</p>
 			</div>
 				<?php
-					$sql = "SELECT name, mail, phone, information, location FROM data";
+					$sql = "SELECT id, name, mail, phone, information, location FROM data";
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
 						while($row = $result->fetch_assoc()) {
 							echo "<div class='data standard'>";
-								echo "<input type='radio' name='checkbox' class='checkbox' id='checkbox'><div class='item_name'>".$row["name"]."</div>";
+								echo "<form action='index.php' method='post'>";
+									echo "<input type='submit' name='remove' value='&#xf057' class='remove-button'>";
+									echo "<input type='hidden' name='remove-id' value='". $row['id'] ."'>";		
+								echo "</form>";
+								echo "<div class='item_name'>".$row["name"]."</div>";
 								echo "<div class='item_mail'>".$row["mail"]."</div>";
 								echo "<div class='item_phone'>".$row["phone"]."</div>";
 								echo "<div class='item_information'>".$row["information"]."</div>";
@@ -89,7 +84,7 @@
 									"
 									);
 									echo "<div class='data'>";
-										echo "<input type='radio' name='checkbox'><div class='item_name'>".$row["name"]."</div>";
+										echo "<div class='item_name'>".$row["name"]."</div>";
 										echo "<div class='item_mail'>".$row["mail"]."</div>";
 										echo "<div class='item_phone'>".$row["phone"]."</div>";
 										echo "<div class='item_information'>".$row["information"]."</div>";
@@ -110,6 +105,21 @@
 						else {
 							echo "Minimum lengte is ".$min_length;
 						};
+					};
+					if(isset($_POST["remove"])) {
+						$id = $_POST["remove-id"];
+						$sql = "DELETE FROM `data` WHERE `ID` = ?";
+						$statement = $conn->prepare($sql);
+						$statement->bind_param("s", $id);
+						$statement->execute();
+						print(
+							"
+								<script>
+									alert('Geselecteerde data is verwijderd!');
+								</script>
+							"
+						);
+						header("Refresh:0.1");
 					};
 				?>
 			</div>

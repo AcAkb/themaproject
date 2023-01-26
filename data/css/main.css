@@ -50,7 +50,7 @@ footer {
 	box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 	border-radius: 20px;
 }
-.button_one {
+.button-one {
 	background: #BFE3B4;
 	color: white;
 	border: 0;
@@ -61,24 +61,9 @@ footer {
 	font-weight: bold;
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
 }
-.button_one:hover {
+.button-one:hover {
 	cursor: pointer;
 	color: forestgreen;
-}
-.button_two {
-	background: #ABD7EB;
-	color: white;
-	border: 0;
-	outline: 0;
-	padding: 10px 30px;
-	border-radius: 20px;
-	font-size: 16px;
-	font-weight: bold;
-	box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
-}
-.button_two:hover {
-	cursor: pointer;
-	color: steelblue;
 }
 .searchbar {
 	background: #E2E2E2;
@@ -89,7 +74,7 @@ footer {
 	border-radius: 20px;
 	font-size: 16px;
 }
-.icon_parent {
+.icon-parent {
 	padding: 0;
 	outline: 0;
 	border: 0;
@@ -106,7 +91,7 @@ footer {
 	cursor: pointer;
 	color: orange;
 }
-.icon_parent:last-child {
+.icon-parent:last-child {
 	color: lightcoral;
 }
 .info {
@@ -163,4 +148,17 @@ footer {
 }
 .info > p:first-child {
 	margin-left: 30px;
+}
+.remove-button {
+	font-family: FontAwesome;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	color: lightcoral;
+	margin-right: 25px;
+	font-size: 16px;
+}
+.remove-button:hover {
+	cursor: pointer;
+	color: red;
 }
