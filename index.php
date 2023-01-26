@@ -40,10 +40,10 @@
 			<form action="index.php" method="get">
 				<input type="text" placeholder="Zoeken.. (op naam)" name="search" class="searchbar">
 				<button type="submit" class="icon_parent"><i class="fa fa-search icon"></i></button>
-				<button type="submit" class="icon_parent" onclick="search();"><i class="fa fa-xmark icon"></i></button>
+				<button type="submit" class="icon_parent"><i class="fa fa-xmark icon"></i></button>
 			</form>
 			<form method="post">
-				<input type="submit" name="button_two" value="Remove Item" class="button_two">
+				<input type="submit" name="button_two" value="" class="button_two" id="button_two">
 			</form>
 		</div>
 	</header>
@@ -62,7 +62,7 @@
 					if ($result->num_rows > 0) {
 						while($row = $result->fetch_assoc()) {
 							echo "<div class='data standard'>";
-								echo "<input type='radio' name='checkbox' class='checkbox'><div class='item_name'>".$row["name"]."</div>";
+								echo "<input type='radio' name='checkbox' class='checkbox' id='checkbox'><div class='item_name'>".$row["name"]."</div>";
 								echo "<div class='item_mail'>".$row["mail"]."</div>";
 								echo "<div class='item_phone'>".$row["phone"]."</div>";
 								echo "<div class='item_information'>".$row["information"]."</div>";
@@ -71,7 +71,7 @@
 						};
 					} else {
 						echo "Geen resultaat";
-					}
+					};
 					if(!empty($_GET["search"])) {
 						$query = $_GET["search"]; 
 						$min_length = 3;
